@@ -1,0 +1,28 @@
+﻿@page "{handler?}/{id?}"
+@model WebAppRazorPages.Pages.UsersModel
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h2>Users</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Password</th>
+        <th>Operation</th>
+    </tr>
+
+    @foreach(var f in Model.Users)
+    {
+    <tr>
+        <td>@f.Id</td>
+        <td>@f.Email</td>
+        <td>@f.Name</td>
+        <td>@f.Password</td>
+        <td><a asp-page="UserEdit" asp-route-id="@f.Id">Edit</a>  <a asp-route-id="@f.Id" asp-page-handler="delete">Delete</a></td>
+    </tr>
+    }
+</table>
+

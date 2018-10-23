@@ -1,0 +1,28 @@
+﻿@page
+@model WebAppRazorPages.Pages.InfoModel
+@{
+    ViewData["Title"] = "Info";
+}
+
+<form asp-page="Login" method="post"> 
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+
+            <div class="form-group">
+                <label>Login</label>
+                <input asp-for="Login.Name" class="form-control" type="text" />
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input asp-for="Login.Password" class="form-control" type="password" />
+            </div>
+
+            <button type="submit" class="btn btn-default">Send</button>
+
+        </div>
+    </div>
+
+</form>
+
